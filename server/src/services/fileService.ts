@@ -12,7 +12,7 @@ export function scanFiles() {
 
 // Get all files
 export function getFiles() {
-    return db.prepare('SELECT * FROM files').all();
+    return dcdb.prepare('SELECT * FROM files').all();
 }
 
 // Insert new file
