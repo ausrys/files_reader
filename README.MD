@@ -34,10 +34,10 @@ It is built entirely with Node.js, Express, and Redux Toolkit (running on the se
    npm install
    ```
 
-3. Compile Typescript
+> [!IMPORTANT]
+> This project is written in TypeScript. Compile it into JavaScript. The files will be compiled in the /dist folder.
 
-   > [!IMPORTANT]
-   > This project is written in TypeScript. Compile it into JavaScript. The files will be compiled in the /dist folder.
+3. Compile Typescript
 
    ```bash
    npm run build
@@ -55,9 +55,10 @@ It is built entirely with Node.js, Express, and Redux Toolkit (running on the se
     http://localhost:3000
     ```
 
+> [!TIP]
+> If you want to run the project in development with automatic rebuilds:
+
 5. Development mode (optional)
-   > [!TIP]
-   > If you want to run the project in development with automatic rebuilds:
 
    ```bash
    npm run dev
@@ -68,7 +69,7 @@ It is built entirely with Node.js, Express, and Redux Toolkit (running on the se
 All the scripts can be found in __package.json__ file.
 
    > [!IMPORTANT]
-   > Files needs to added mannualy to /data folder. If you run the app as dev, put files in /server/src/data. If you run compiled app, put files in /server/dist/src/data.
+   > Files need to be added mannualy to /data folder. If you run the app as dev, put files in /server/src/data. If you run compiled app, put files in /server/dist/src/data.
 
 ## App Structure
 
