@@ -1,5 +1,7 @@
 import { Router } from 'express';
-import { getFiles } from '../controllers/filesController';
+import { downloadState, getFiles, rescanFiles } from '../controllers/filesController';
 export const filesRouter = Router();
 
-filesRouter.get('/all', getFiles);
+filesRouter.get('/list', getFiles);
+filesRouter.get('/scan', rescanFiles);
+filesRouter.get('/download-state', downloadState);

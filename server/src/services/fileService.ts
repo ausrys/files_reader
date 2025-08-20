@@ -1,32 +1,12 @@
 import fs from 'fs';
 import path from 'path';
-import db from '../config/db';
-// Current working directory
-const FILES_PATH = path.join(process.cwd(), '/data');
 
+// Current directory where the code is called from (src/services) adjust path based on that
+const FILES_PATH = path.join(__dirname, './../data');
 // Scan files from provided directory
 export function scanFiles() {
+    // If folder does not exits -> create one
+    if (!fs.existsSync(FILES_PATH)) fs.mkdirSync(FILES_PATH, { recursive: true });
     const files = fs.readdirSync(FILES_PATH);
     return files;
-}
-
-// Get all files
-export function getFiles() {
-    return dcdb.prepare('SELECT * FROM files').all();
-}
-
-// Insert new file
-export function addFile(name: string) {
-    const stmt = db.prepare(`
-    INSERT OR IGNORE INTO files (name, active) VALUES (?, 1)
-  `);
-    stmt.run(name);
-}
-
-// Update file status
-export function updateFileStatus(name: string, active: boolean) {
-    const stmt = db.prepare(`
-    UPDATE files SET active = ?, updated_at = CURRENT_TIMESTAMP WHERE name = ?
-  `);
-    stmt.run(active ? 1 : 0, name);
 }
